@@ -1,35 +1,9 @@
-package br.senai.lab365.fshealth.pokedex.models;
+package br.senai.lab365.fshealth.pokedex.dtos;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "pokemon")
-public class Pokemon {
-    @Id
+public class PokemonResponse {
     private Integer numero;
-
-    @Column(nullable = false)
     private String nome;
-
-    @Column(length = 1000)
     private String descricao;
-
-    @Column(nullable = false)
-    private String imagemUrl;
-
-    private String tipo;
-
-    private String categoria;
-
-    @Column(nullable = false)
-    private String habitat;
-
-    private Double altura;
-    private Double peso;
-    private boolean capturado;
 
     public Integer getNumero() {
         return numero;
@@ -110,4 +84,12 @@ public class Pokemon {
     public void setCapturado(boolean capturado) {
         this.capturado = capturado;
     }
+
+    private String imagemUrl;
+    private String tipo;
+    private String categoria;
+    private String habitat;
+    private Double altura;
+    private Double peso;
+    private boolean capturado;
 }
