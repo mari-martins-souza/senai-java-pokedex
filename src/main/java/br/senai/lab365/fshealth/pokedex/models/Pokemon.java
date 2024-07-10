@@ -1,9 +1,7 @@
 package br.senai.lab365.fshealth.pokedex.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import br.senai.lab365.fshealth.pokedex.enums.TipoEnum;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "pokemon")
@@ -20,7 +18,8 @@ public class Pokemon {
     @Column(nullable = false)
     private String imagemUrl;
 
-    private String tipo;
+    @Enumerated(value = EnumType.STRING)
+    private TipoEnum tipo;
 
     private String categoria;
 
@@ -63,14 +62,6 @@ public class Pokemon {
         this.imagemUrl = imagemUrl;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     public String getCategoria() {
         return categoria;
     }
@@ -109,5 +100,13 @@ public class Pokemon {
 
     public void setCapturado(boolean capturado) {
         this.capturado = capturado;
+    }
+
+    public TipoEnum getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoEnum tipo) {
+        this.tipo = tipo;
     }
 }

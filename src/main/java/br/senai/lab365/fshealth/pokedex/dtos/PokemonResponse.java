@@ -1,5 +1,7 @@
 package br.senai.lab365.fshealth.pokedex.dtos;
 
+import br.senai.lab365.fshealth.pokedex.enums.TipoEnum;
+
 public class PokemonResponse {
     private Integer numero;
     private String nome;
@@ -35,14 +37,6 @@ public class PokemonResponse {
 
     public void setImagemUrl(String imagemUrl) {
         this.imagemUrl = imagemUrl;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public String getCategoria() {
@@ -86,7 +80,16 @@ public class PokemonResponse {
     }
 
     private String imagemUrl;
-    private String tipo;
+
+    public TipoEnum getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoEnum tipo) {
+        this.tipo = tipo;
+    }
+
+    private TipoEnum tipo;
     private String categoria;
     private String habitat;
     private Double altura;

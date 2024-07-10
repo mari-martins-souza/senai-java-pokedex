@@ -1,5 +1,6 @@
 package br.senai.lab365.fshealth.pokedex.dtos;
 
+import br.senai.lab365.fshealth.pokedex.enums.TipoEnum;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -17,8 +18,16 @@ public class PokemonCapturadoRequest {
     @NotBlank
     private String imagemUrl;
 
+    public @NotNull TipoEnum getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(@NotNull TipoEnum tipo) {
+        this.tipo = tipo;
+    }
+
     @NotNull
-    private String tipo;
+    private TipoEnum tipo;
 
     @NotBlank
     private String categoria;
@@ -62,14 +71,6 @@ public class PokemonCapturadoRequest {
 
     public void setImagemUrl(@NotBlank String imagemUrl) {
         this.imagemUrl = imagemUrl;
-    }
-
-    public @NotNull String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(@NotNull String tipo) {
-        this.tipo = tipo;
     }
 
     public @NotBlank String getCategoria() {
